@@ -18,7 +18,14 @@ RUN apt-get update \
     && curl -fsSL "https://awscli.amazonaws.com/awscli-exe-linux-${aws_arch}.zip" -o /tmp/awscliv2.zip \
     && unzip -q /tmp/awscliv2.zip -d /tmp \
     && /tmp/aws/install \
-    && rm -rf /tmp/aws /tmp/awscliv2.zip \
+    && case "$(dpkg --print-architecture)" in \
+        amd64) tflint_arch=amd64 ;; \
+        arm64) tflint_arch=arm64 ;; \
+        *) echo "Unsupported architecture for TFLint" >&2; exit 1 ;; \
+    esac \
+    && curl -fsSL "https://github.com/terraform-linters/tflint/releases/download/v0.60.0/tflint_linux_${tflint_arch}.zip" -o /tmp/tflint.zip \
+    && unzip -q /tmp/tflint.zip -d /usr/local/bin \
+    && rm -rf /tmp/aws /tmp/awscliv2.zip /tmp/tflint.zip \
     && apt-get purge -y --auto-remove curl gnupg unzip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*

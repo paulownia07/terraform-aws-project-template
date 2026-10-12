@@ -11,7 +11,8 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "hashicorp.terraform"
+                "hashicorp.terraform",
+                "emeraldwalk.runonsave"
             ],
             "settings": {
                 "[terraform]": {
@@ -21,6 +22,14 @@
                 "[terraform-vars]": {
                     "editor.defaultFormatter": "hashicorp.terraform",
                     "editor.formatOnSave": true
+                },
+                "emeraldwalk.runonsave": {
+                    "commands": [
+                        {
+                            "cmd": "tflint --chdir=src",
+                            "match": "\\.tf$"
+                        }
+                    ]
                 }
             }
         }
