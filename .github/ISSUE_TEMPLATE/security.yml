@@ -1,0 +1,31 @@
+name: Security report
+description: Report a potential security vulnerability.
+title: "[Security]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include sensitive details or exploit instructions in a public issue.
+        If private vulnerability reporting is enabled for this repository, use it instead.
+        Otherwise, contact the project maintainers through a private channel before sharing details.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Provide a high-level summary without publicly disclosing sensitive details.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Potential impact
+      description: Describe the potential impact at a high level.
+    validations:
+      required: true
+  - type: textarea
+    id: affected-versions
+    attributes:
+      label: Affected versions or components
+      description: Identify any versions or components that may be affected.
+    validations:
+      required: false

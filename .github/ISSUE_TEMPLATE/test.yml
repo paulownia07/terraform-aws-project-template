@@ -1,0 +1,25 @@
+name: Test
+description: Propose a test or report a testing gap.
+title: "[Test]: "
+body:
+  - type: textarea
+    id: area
+    attributes:
+      label: Area to test
+      description: Identify the feature, module, or behavior that needs test coverage.
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: Testing gap
+      description: Describe what is currently untested or what testing problem you encountered.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-tests
+    attributes:
+      label: Proposed tests
+      description: Describe the tests that would address this gap, if known.
+    validations:
+      required: false

@@ -1,7 +1,18 @@
-議論や相談
-
-例:
-
-FastAPI を採用するべきか
-uv と Poetry のどちらを使うか
-ディレクトリ構成の検討
+name: Question
+description: Ask a question or start a discussion about the project.
+title: "[Question]: "
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What would you like to know or discuss?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Share relevant background, constraints, or what you have already tried.
+    validations:
+      required: false
