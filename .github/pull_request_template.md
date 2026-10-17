@@ -1,4 +1,6 @@
-## PR種別
+# Pull Request
+
+## Type
 
 - [ ] Feature
 - [ ] Bug Fix
@@ -7,10 +9,27 @@
 - [ ] Dependency Update
 - [ ] Others
 
-## 概要
+## Summary
 
-## 関連Issue
+Briefly describe the problem this pull request solves and the changes it introduces.
+
+## Changes
+
+-
+
+## Related Issue
 
 Closes #
 
-## テスト
+## Testing
+
+List the tests you ran and any manual verification steps.
+
+-
+
+## Checklist
+
+- [ ] I reviewed the changes and removed unrelated changes.
+- [ ] I added or updated relevant tests and ran them.
+- [ ] I updated the documentation where needed.
+- [ ] I ran the relevant linting and formatting checks.
