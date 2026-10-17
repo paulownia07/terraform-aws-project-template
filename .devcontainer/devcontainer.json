@@ -8,6 +8,7 @@
     "mounts": [
         "source=${localEnv:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind"
     ],
+    "postCreateCommand": "bash .devcontainer/post-create.sh",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -30,7 +31,12 @@
                             "match": "\\.tf$"
                         }
                     ]
-                }
+                },
+                "github.copilot.chat.commitMessageGeneration.instructions": [
+                    {
+                        "file": ".github/instructions/commit.instructions.md"
+                    }
+                ]
             }
         }
     }
